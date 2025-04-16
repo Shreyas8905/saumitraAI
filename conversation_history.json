@@ -47,6 +47,10 @@
       {
         "role": "assistant",
         "content": " Folder 'shreyas' created and React project initialized."
+      },
+      {
+        "role": "user",
+        "content": "Hello"
       }
     ]
   }
