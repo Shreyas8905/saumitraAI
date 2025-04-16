@@ -6,7 +6,7 @@ from functions.weather_ops import get_weather
 from functions.currency_ops import convert_currency
 from functions.note_ops import notes_manager
 from utils.history_manager import HistoryManager
-from apikey import GROQ_API_KEY
+from .apikey import GROQ_API_KEY
 
 class JarvisAssistant:
     def __init__(self):

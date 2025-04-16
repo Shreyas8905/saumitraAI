@@ -51,6 +51,112 @@
       {
         "role": "user",
         "content": "Hello"
+      },
+      {
+        "role": "user",
+        "content": "Write and run a script.py file in pwd to create a folder in D:\\projects"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "call_24j9",
+            "function": {
+              "name": "file_operations",
+              "arguments": "{\"operation\": \"write\", \"filename\": \"script.py\", \"content\": \"import os\\nos.makedirs('D:\\\\\\\\projects')\"}"
+            }
+          },
+          {
+            "type": "function",
+            "id": "call_ky9e",
+            "function": {
+              "name": "process_manager",
+              "arguments": "{\"action\": \"find\", \"process_name\": \"python script.py\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_24j9",
+        "name": "file_operations",
+        "content": "{\"status\": \"success\", \"message\": \"Content written to script.py successfully\"}"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_ky9e",
+        "name": "process_manager",
+        "content": "{\"status\": \"success\", \"found\": [], \"message\": \"Found 0 matching processes\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "<function>process_manager{\"action\": \"run\", \"process_name\": \"python script.py\"}</function>"
+      },
+      {
+        "role": "user",
+        "content": "Write a python file which consists a tkinter counter application in pwd"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "call_qb32",
+            "function": {
+              "name": "file_operations",
+              "arguments": "{\"operation\": \"write\", \"filename\": \"counter_app.py\", \"content\": \"import tkinter as tk\\n\\nclass CounterApp:\\n    def __init__(self, root):\\n        self.root = root\\n        self.count = 0\\n        self.label = tk.Label(root, text=\\\"Count: 0\\\", font=('Helvetica', 24))\\n        self.label.pack()\\n        self.button = tk.Button(root, text='Increment', command=self.increment)\\n        self.button.pack()\\n\\n    def increment(self):\\n        self.count += 1\\n        self.label.config(text=f'Count: {self.count}')\\n\\nif __name__ == '__main__':\\n    root = tk.Tk()\\n    app = CounterApp(root)\\n    root.mainloop()\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_qb32",
+        "name": "file_operations",
+        "content": "{\"status\": \"success\", \"message\": \"Content written to counter_app.py successfully\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The counter application code has been written to counter_app.py. You can run it using Python."
+      },
+      {
+        "role": "user",
+        "content": "run this file"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "call_vkkb",
+            "function": {
+              "name": "process_manager",
+              "arguments": "{\"action\": \"run\", \"process_name\": \"python counter_app.py\"}"
+            }
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "run this file using python counter_app.py command in commandline"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "call_m8gs",
+            "function": {
+              "name": "process_manager",
+              "arguments": "{\"action\": \"run\", \"process_name\": \"python counter_app.py\"}"
+            }
+          }
+        ]
       }
     ]
   }
